@@ -24,6 +24,17 @@ Recordando  que también debe ser posible convertir inversamente, es decir:
 - Convertir de Yen Japonés a la moneda de tu país
 - Convertir de Won sul-coreano a la moneda de tu país
 ```
+## Extras:
+
+# Convertidor de temperaturas:
+
+```sh
+- Convertir de grados Celcius a Farenheit
+- Convertir de grados Celcius a Kelvin 
+- Convertir de grados Farenheit a Celcius
+- Convertir de grados Kelvin a Celcius
+- Convertir de grados Kelvin a Farenheit
+```
 
 ## Tecnologías
 
