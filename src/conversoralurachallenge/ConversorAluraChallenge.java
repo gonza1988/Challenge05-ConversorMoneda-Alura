@@ -1,6 +1,7 @@
 package conversoralurachallenge;
 
 import conversoralurachallenge.ConversorMoneda.CuadroEleccion;
+import conversoralurachallenge.ConversorTemperatura.CuadroEleccionTemperatura;
 import javax.swing.JOptionPane;
 
 public class ConversorAluraChallenge {
@@ -8,6 +9,8 @@ public class ConversorAluraChallenge {
     public static void main(String[] args) {
         
         CuadroEleccion monedas = new CuadroEleccion();
+        CuadroEleccionTemperatura temperatura = new CuadroEleccionTemperatura();
+        
         boolean salir = false;
 
         while (salir == false) {
@@ -40,7 +43,7 @@ public class ConversorAluraChallenge {
                     input = JOptionPane.showInputDialog("Ingresa el valor de la temperatura que deseas convertir ");
                     if (ValidarNumero(input) == true) {
                         double Minput = Double.parseDouble(input);
-                        //temperatura.ConvertirTemperatura(Minput);
+                        temperatura.ConvertirTemperatura(Minput);
 
                         int respuesta = 0;
                         respuesta = JOptionPane.showConfirmDialog(null, "¿Desea continuar?");
