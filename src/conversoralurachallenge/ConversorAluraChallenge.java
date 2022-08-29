@@ -2,21 +2,23 @@ package conversoralurachallenge;
 
 import conversoralurachallenge.ConversorMoneda.CuadroEleccion;
 import conversoralurachallenge.ConversorTemperatura.CuadroEleccionTemperatura;
+import conversoralurachallenge.SimuladorPlazoFijo.SimularPlazoFijo;
 import javax.swing.JOptionPane;
 
 public class ConversorAluraChallenge {
 
     public static void main(String[] args) {
-        
+
         CuadroEleccion monedas = new CuadroEleccion();
         CuadroEleccionTemperatura temperatura = new CuadroEleccionTemperatura();
-        
+        SimularPlazoFijo simulador = new SimularPlazoFijo();
+
         boolean salir = false;
 
         while (salir == false) {
 
             String opciones = (JOptionPane.showInputDialog(null, "Seleccione una opción de conversión ", "Menu", JOptionPane.QUESTION_MESSAGE,
-                    null, new Object[]{"Conversor de Moneda", "Conversor de Temperatura"}, "Seleccion")).toString();
+                    null, new Object[]{"Conversor de Moneda", "Conversor de Temperatura", "Simulador Plazo Fijo"}, "Seleccion")).toString();
 
             switch (opciones) {
                 case "Conversor de Moneda":
@@ -31,7 +33,27 @@ public class ConversorAluraChallenge {
                         } else {
                             JOptionPane.showMessageDialog(null, "Programa terminado");
                             salir = true;
-                         
+
+                        }
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Valor inválido");
+                    }
+                    break;
+
+                case "Simulador Plazo Fijo":
+                    input = JOptionPane.showInputDialog("Ingresa la cantidad de dinero a simular: ");
+                    if (ValidarNumero(input) == true) {
+                        double Minput = Double.parseDouble(input);
+                        simulador.simularPlazo(Minput);
+
+                        int respuesta = JOptionPane.showConfirmDialog(null, "¿Deseas realizar otra simulación?");
+                        if (JOptionPane.OK_OPTION == respuesta) {
+                            System.out.println("Continuando con el programa");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Programa terminado");
+                            salir = true;
+
                         }
 
                     } else {
